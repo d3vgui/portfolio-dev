@@ -1,0 +1,46 @@
+$background: #212529;
+$color-white: #ffff;
+
+.footer {
+  background-color: $background;
+  padding: 35px;
+  height: 50vh;
+
+  .contentFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    gap: 30px;
+
+    .navFooter{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        border: 1px solid red;
+
+        h1{
+            color: $color-white;
+        }
+        
+        a{
+            color: $color-white;
+        }
+
+        span{
+            color: $color-white;
+            font-size: 14px;
+            margin: 20px 0;
+        }
+
+        ul{
+            display: flex;
+            gap: 15px;
+        }
+
+        i{
+            font-size: 20px;
+        }
+    }
+  }
+}
