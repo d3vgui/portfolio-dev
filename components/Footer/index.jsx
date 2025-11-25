@@ -14,7 +14,7 @@ export default function Footer() {
               deleniti officia delectus. Expedita, culpa recusandae molestias
               non ad eius asperiores eaque!
             </span>
-            <ul className={styles.navList}>
+            <ul>
               <li>
                 <a
                   target="_blank"
@@ -36,8 +36,8 @@ export default function Footer() {
             </ul>
           </div>
           <div className={styles.navFooter}>
-            <h3>Navegação</h3>
-            <ul>
+            <h4>Navegação</h4>
+            <ul className={styles.navList}>
               <li>
                 <a href="#">Início</a>
               </li>
@@ -55,10 +55,16 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className={styles.navFooter}>
-            <h1>Coluna 3</h1>
+          <div className={styles.navList}>
+            <h4>Contato</h4>
+            <ul>
+              <li><a href="mailto:guicarvcontato@outlook.com"><i className="bi bi-envelope"></i> guicarvcontato@outlook.com</a></li>
+              <li><a href="https://www.linkedin.com/in/gu1d3v/"><i className="bi bi-linkedin"></i> @gu1d3v</a></li>
+              <li><a href="https://github.com/"><i className="bi bi-github"></i> @d3vgui</a></li>
+            </ul>
           </div>
         </div>
+        <div className={styles.line}></div>
       </footer>
     </Fragment>
   )

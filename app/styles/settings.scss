@@ -1,12 +1,12 @@
-$background: #212529;
-$font: "Mona Sans";
+$background: #171a1d;
+$font: "JetBrains Mono";
 
 @font-face {
   font-family: $font;
-  src: url(../fonts/MonaSans-VariableFont_wdth\_wght.ttf);
+  src: url(../fonts/JetBrainsMono-VariableFont_wght.ttf);
 }
 
-*, ::before, ::after {
+*{
   padding: 0;
   margin: 0;
   box-sizing: border-box;

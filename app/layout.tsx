@@ -1,8 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/settings.scss";
 import "bootstrap-icons/font/bootstrap-icons.css"
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import CustomCursor from '../components/CustomCursor/'
 
 export default function RootLayout({
   children,
@@ -12,9 +11,8 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body>
-        <Header/>
-        {children}
-        <Footer/> 
+        <CustomCursor/>
+          {children}
       </body>
     </html>
   );

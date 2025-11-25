@@ -1,0 +1,153 @@
+.vscodeContainer {
+  width: 100%;
+  max-width: 600px;
+  background-color: #1e1e1e; // Fundo clássico VS Code Dark+
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  margin: 2rem auto;
+  border: 1px solid #333;
+}
+
+// --- Header da Janela ---
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  background-color: #252526; // Um pouco mais claro que o editor
+  position: relative;
+
+  .windowControls {
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      &.red { background-color: #ff5f56; }
+      &.yellow { background-color: #ffbd2e; }
+      &.green { background-color: #27c93f; }
+    }
+  }
+
+  .title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #858585;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+}
+
+// --- Barra de Abas ---
+.tabs {
+  background-color: #252526;
+  display: flex;
+  align-items: flex-end;
+  height: 35px;
+  
+  .tab {
+    background-color: #1e1e1e;
+    color: #e8e8e8;
+    padding: 8px 15px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-top: 1px solid #007acc; // Linha azul no topo da aba ativa
+    min-width: 120px;
+
+    &.active {
+      background-color: #1e1e1e;
+    }
+
+    .icon img {
+      height: 17px;
+      width: 17px;
+    }
+
+    .close {
+      margin-left: auto;
+      font-size: 1.1rem;
+      opacity: 0;
+      color: #ccc;
+    }
+
+    &:hover .close {
+      opacity: 1;
+    }
+  }
+}
+
+// --- Área Principal ---
+.editorArea {
+  display: flex;
+  min-height: 250px;
+  padding-top: 10px;
+}
+
+// Coluna de Números (Gutter)
+.gutter {
+  width: 50px;
+  text-align: right;
+  padding-right: 15px;
+  color: #6e7681;
+  user-select: none;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border-right: 1px solid #333; // Divisória sutil
+}
+
+.lineNumber {
+  display: block;
+}
+
+// Conteúdo do Código
+.codeContent {
+  flex: 1;
+  padding-left: 15px;
+  padding-right: 10px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: pre; // Respeita os espaços do código
+  overflow-x: auto;
+}
+
+.line {
+  display: block;
+  min-height: 1.5em; // Garante altura mesmo em linhas vazias
+}
+
+// --- Cores de Syntax Highlighting (VS Code Theme) ---
+.keyword {
+  color: #c586c0; // Roxo (import, return)
+}
+
+.component {
+  color: #dcdcaa; // Amarelo (Funções) ou #4ec9b0 (Classes)
+}
+
+.string {
+  color: #ce9178; // Laranja
+}
+
+.attr {
+  color: #9cdcfe; // Azul claro (props)
+}
+
+.defaultText {
+  color: #d4d4d4; // Branco padrão
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px; // Fino estilo VS Code
+  height: 1.1em; // Altura relativa ao texto
+  background-color: #d4d4d4; // Cor cinza claro/branco
+  margin-left: 1px;
+  vertical-align: text-bottom; // Alinha com a base do texto
+}
