@@ -1,38 +1,60 @@
 $color-white: #ffff;
 
-.configSection{
-    padding: 80px 0;
+.configSection {
+  padding: 80px 0;
 }
 
-.heroSection{
-    height: 90vh;
+.heroSection {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h2 {
+    color: $color-white;
+    font-size: 50px;
+    min-height: 3.8em;
+  }
+
+  h3 {
+    color: $color-white;
+  }
+
+  :global(.Typewriter__cursor) {
+    color: $color-white;
+    font-weight: 200;
+  }
+
+  .buttons {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
 
-    h2{
+    button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: $color-white;
+      transition: 0.4s ease-in-out;
+
+      &:hover {
+        background-color: #1582b4;
+        transform: translateY(5px);
         color: $color-white;
-        font-size: 60px;
-    }
 
-    h3{
-        color: $color-white;
-    }
-
-    .buttons{
-        display: flex;
-        gap: 10px;
-        margin-top: 20px;
-        flex-wrap: wrap;
-
-        button{
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
+        a,
+        i {
+          color: $color-white;
         }
-
-        a, i{
-            color: #000;
-        }
+      }
     }
+
+    a,
+    i {
+      color: #000;
+      transition: 0.4s ease-in-out;
+    }
+  }
 }

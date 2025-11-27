@@ -4,6 +4,7 @@ import Header from "../components/Header"
 import Footer from "../components/Footer"
 import HeroSection from "../components/Section/HeroSection"
 import AboutSection from "../components/Section/AboutSection"
+import TechSection from "../components/Section/TechSection"
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <Header/>
         <HeroSection/>
         <AboutSection/>
+        <TechSection/>
         <Footer/>
       </Fragment>
     </SmoothScroll>
