@@ -5,8 +5,8 @@ import Lenis from 'lenis'
 export default function SmoothScroll({ children }) {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 2.5, // Velocidade
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Curva de suavidade
+      duration: 5.5, // Velocidade
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // curva de suavidade
       smoothWheel: true
     })
 

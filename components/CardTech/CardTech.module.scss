@@ -1,0 +1,46 @@
+$color-blue: #4a92f8;
+$color-bg-tech: #212529;
+
+.tech {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  height: 130px;
+  width: 130px;
+  border-radius: 10px;
+  background-color: $color-bg-tech;
+  position: relative;
+  border: 1px solid transparent;
+  transition: background-color 0.3s ease;
+  box-shadow: #00000066 0px 2px 4px, #0000004d 0px 7px 13px -3px, #00000033 0px -3px 0px inset;
+
+  span {
+    text-align: center;
+    color: $color-blue;
+  }
+
+  img {
+    height: 48px;
+    width: auto;
+  }
+}
+
+/* --- MEDIA QUERIES --- */
+
+@media(max-width: 513px){
+  .tech {
+    height: 100px;
+    width: 80%;
+    gap: 5px;
+
+    span{
+      font-size: 14px;
+    }
+
+    img{
+      height: 30px;
+    }
+  }
+}

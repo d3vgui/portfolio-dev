@@ -1,9 +1,8 @@
 .vscodeContainer {
   width: 100%;
-  max-width: 600px;
-  background-color: #1e1e1e; // Fundo clássico VS Code Dark+
+  background-color: #1e1e1e; 
   border-radius: 8px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 12px 40px #00000099;
   overflow: hidden;
   margin: 2rem auto;
   border: 1px solid #333;
@@ -14,7 +13,7 @@
   display: flex;
   align-items: center;
   padding: 10px 16px;
-  background-color: #252526; // Um pouco mais claro que o editor
+  background-color: #252526;
   position: relative;
 
   .windowControls {
@@ -44,6 +43,7 @@
 }
 
 // --- Barra de Abas ---
+
 .tabs {
   background-color: #252526;
   display: flex;
@@ -58,7 +58,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    border-top: 1px solid #007acc; // Linha azul no topo da aba ativa
+    border-top: 1px solid #007acc;
     min-width: 120px;
 
     &.active {
@@ -99,7 +99,7 @@
   user-select: none;
   font-size: 0.9rem;
   line-height: 1.5;
-  border-right: 1px solid #333; // Divisória sutil
+  border-right: 1px solid #333;
 }
 
 .lineNumber {
@@ -113,41 +113,97 @@
   padding-right: 10px;
   font-size: 0.9rem;
   line-height: 1.5;
-  white-space: pre; // Respeita os espaços do código
+  white-space: pre;
   overflow-x: auto;
+  min-width: 0;
 }
 
 .line {
   display: block;
-  min-height: 1.5em; // Garante altura mesmo em linhas vazias
+  min-height: 1.5em; 
 }
 
-// --- Cores de Syntax Highlighting (VS Code Theme) ---
 .keyword {
-  color: #c586c0; // Roxo (import, return)
+  color: #c586c0;
 }
 
 .component {
-  color: #dcdcaa; // Amarelo (Funções) ou #4ec9b0 (Classes)
+  color: #dcdcaa;
 }
 
 .string {
-  color: #ce9178; // Laranja
+  color: #ce9178;
 }
 
 .attr {
-  color: #9cdcfe; // Azul claro (props)
+  color: #9cdcfe;
 }
 
 .defaultText {
-  color: #d4d4d4; // Branco padrão
+  color: #d4d4d4;
 }
 
 .cursor {
   display: inline-block;
-  width: 2px; // Fino estilo VS Code
-  height: 1.1em; // Altura relativa ao texto
-  background-color: #d4d4d4; // Cor cinza claro/branco
+  width: 2px;
+  height: 1.1em;
+  background-color: #d4d4d4;
   margin-left: 1px;
-  vertical-align: text-bottom; // Alinha com a base do texto
+  vertical-align: text-bottom;
+}
+
+// ** MEDIA QUERIES ** //
+
+@media (max-width: 1399px){
+  .vscodeContainer{
+    width: 100%;
+
+    span {
+      font-size: 13px;
+    }
+  }
+}
+
+@media (max-width: 1199px){
+  .vscodeContainer{
+    span {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 991px){
+  .vscodeContainer{
+    span {
+      font-size: 14px;
+    }
+  }
+}
+
+@media(max-width: 577px) {
+  .vscodeContainer {
+    width: 90vw; 
+    margin: 2rem auto;
+    
+    span {
+      font-size: 12px;
+    }
+  }
+}
+
+@media(max-width: 553px) {
+  .vscodeContainer {
+    span {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .vscodeContainer {
+    .gutter{
+      width: 30px;
+      padding-right: 5px;
+    }
+  }
 }

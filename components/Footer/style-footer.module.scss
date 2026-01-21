@@ -1,87 +1,102 @@
-$background: #212529;
-$color-text: #a7a9b0;
+$background: #18191a;
+$color-text: #868686;
 $color-white: #ffff;
+$color-blue: #4a92f8;
 
 .footer {
-  background-color: $background;
-  padding: 40 0px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+   background-color: $background;
+   padding: 40 0px;
+   height: auto;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 
-  .contentFooter {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 30px;
+   .contentFooter {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
 
-    .navFooter{
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        min-width: 200px;
+      .navFooter {
+         display: flex;
+         flex-direction: column;
 
-        h4{
+         img {
+            height: 35px;
+            width: auto;
+         }
+
+         h4 {
             color: $color-white;
-        }
-        
-        a{
+         }
+
+         a {
             color: $color-text;
             transition: 0.3s ease-in-out;
 
-            &:hover{
-                color: $color-white;
+            &:hover {
+               color: $color-blue;
             }
-        }
+         }
 
-        span{
-            color: $color-text;
-            font-size: 14px;
+         .text {
             margin: 20px 0;
-        }
 
-        ul{
+            p {
+               color: $color-text;
+               font-size: 14px;
+               margin: 10px 0;
+            }
+         }
+
+         ul {
             display: flex;
             gap: 10px;
-        }
+         }
 
-        i{
+         i {
             font-size: 25px;
-        }
-    }
+         }
+      }
 
-    .navList{
-        display: flex;
-        flex-direction: column;
+      .navList {
+         display: flex;
+         flex-direction: column;
 
-        h4{
+         h4 {
             color: $color-white;
-        }
+         }
 
-        li{
+         li {
             margin: 5px 0;
-        }
+         }
 
-        a {
+         a {
             color: $color-text;
             transition: 0.3s ease-in-out;
 
-            &:hover{
-                color: $color-white;
+            &:hover {
+               color: $color-blue;
             }
-        }
-        
-        i{
-            margin-right: 5px;
-        }
-    }
-  }
+         }
 
-  .line{
-    height: 1px;
-    width: 90%;
-    background-color: $color-text;
-    margin: 45px 0;
-  }
+         i {
+            margin-right: 5px;
+         }
+      }
+   }
+
+   .line {
+      height: 1px;
+      width: 90%;
+      background-color: $color-text;
+      margin: 45px 0;
+   }
+
+   .copyright {
+      span {
+         color: $color-text;
+         font-size: 14px;
+      }
+   }
 }

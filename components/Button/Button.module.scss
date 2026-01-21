@@ -1,0 +1,32 @@
+$color-white: #FFFFFF;
+$color-blue: #4a92f8;
+$color-black: #000000;
+$color-shadow-button: #4a92f866;
+
+.button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-black;
+    cursor: pointer;
+    background-color: $color-white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.4s ease-in-out;
+    margin: 15px 0;
+    box-shadow: 0 2px 5px #0000001a;
+
+    &:hover{
+        transform: translateY(5px);
+        background-color: $color-blue;
+        color: $color-white !important;
+        box-shadow: 0 5px 15px $color-shadow-button;
+    }
+
+    i {
+        margin-left: 10px;
+        font-size: 18px;
+        color: inherit !important;
+        transition: color 0.4s ease-in-out;
+    }
+}

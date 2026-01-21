@@ -1,22 +1,80 @@
-$color-white: #ffff;
+$color-white: #ffffff;
+$color-blue: #4992f8;
+$color-bg: #22262a;
+$grid-color: #ffffff0d; 
+$grid-size: 50px;
+
+.gridBackground {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background-image: 
+    linear-gradient(to right, #{$grid-color} 1px, transparent 1px),
+    linear-gradient(to bottom, #{$grid-color} 1px, transparent 1px);
+  
+  background-size: $grid-size $grid-size;
+
+  mask-image: radial-gradient(
+    ellipse at top center, 
+    black 40%, 
+    transparent 80%
+  );
+  
+  -webkit-mask-image: radial-gradient(
+    ellipse at top center, 
+    black 40%, 
+    transparent 80%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 1; 
+}
 
 .configSection {
   padding: 80px 0;
 }
 
 .heroSection {
-  height: 90vh;
+  min-height: 95vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden; 
+  // margin: 0 20px;
+  // border-radius: 30px;
+  // background-color: $color-bg;
+  
+
+  .spanWhite {
+    color: $color-white;
+  }
 
   h2 {
     color: $color-white;
-    font-size: 50px;
-    min-height: 3.8em;
+    font-size: 55px;
+    margin: 10px 0;
   }
 
   h3 {
+    color: transparent;
+    font-size: 36px;
+    margin: 0;
+    background: linear-gradient(to right, $color-blue, $color-white);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .animatedSpan {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 24px;
+    margin: 20px 0;
     color: $color-white;
   }
 
@@ -40,21 +98,72 @@ $color-white: #ffff;
       transition: 0.4s ease-in-out;
 
       &:hover {
-        background-color: #1582b4;
+        background-color: $color-blue;
         transform: translateY(5px);
         color: $color-white;
 
-        a,
-        i {
+        a, i {
           color: $color-white;
         }
       }
     }
 
-    a,
-    i {
+    a, i {
       color: #000;
       transition: 0.4s ease-in-out;
     }
   }
+}
+
+// ** MEDIA QUERIES ** //
+
+@media (max-width: 1399px){
+  .heroSection {
+    h2 {
+      font-size: 40px;
+    }
+
+    h3 {
+      font-size: 30px;
+    }
+  }
+}
+
+@media (max-width: 1199px){
+  .heroSection {
+    h2 {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    h3 {
+      text-align: center;
+    }
+
+    .animatedSpan{
+      display: block;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .buttons{
+      justify-content: center;
+    }
+  } 
+}
+
+@media (max-width: 575px){
+  .heroSection {
+    h2 {
+      font-size: 28px;
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+
+    .animatedSpan{
+      font-size: 20px;
+    }
+  } 
 }

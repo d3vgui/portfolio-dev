@@ -1,0 +1,70 @@
+$color-white: #ffffff;
+$color-gray: #696969;
+$color-blue: #4a92f8;
+$color-shadow-button: #4a92f866;
+$color-bg: #212529;
+
+.projectsSection {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+  border-radius: 30px;
+  background-color: $color-bg;
+  padding: 50px;
+  background-image: url(../../../app/images/topographic-2.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  .title {
+    h2 {
+      color: $color-white;
+      font-size: 36px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    span {
+      color: $color-blue;
+    }
+
+    .line {
+      height: 1px;
+      background-color: $color-blue;
+      flex-grow: 1;
+    }
+  }
+
+  .contentCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 60px;
+  }
+}
+
+//* --- MEDIA QUERIES --- *//
+
+@media (max-width: 769px) {
+  .projectsSection {
+
+    .contentCards{
+      margin-top: 40px;
+    }
+
+  }
+}
+
+@media (max-width: 577px) {
+  .projectsSection {
+    padding: 50px 10px;
+
+    .title {
+      h2 {
+        font-size: 28px;
+      }
+    }
+  }
+}

@@ -1,9 +1,34 @@
-$background: #1c1e1f;
+$background: #131414;
 $font: "JetBrains Mono";
+
+$scrollbar-thumb: #4a92f8;
+$scrollbar-track: #212529;
 
 @font-face {
   font-family: $font;
   src: url(../fonts/JetBrainsMono-VariableFont_wght.ttf);
+}
+
+html {
+  scrollbar-color: $scrollbar-thumb $scrollbar-track;
+  scrollbar-width: thin; 
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $scrollbar-track;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $scrollbar-thumb;
+  border-radius: 5px;
+
+  &:hover {
+    background: lighten($scrollbar-thumb, 10%); 
+  }
 }
 
 *{
