@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $background: #131414;
 $font: "JetBrains Mono";
 
@@ -27,7 +29,7 @@ html {
   border-radius: 5px;
 
   &:hover {
-    background: lighten($scrollbar-thumb, 10%); 
+    background: color.adjust($scrollbar-thumb, $lightness: 10%); 
   }
 }
 

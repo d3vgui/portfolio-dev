@@ -1,10 +1,10 @@
 import styles from "./Button.module.scss"
 
-export default function Button({ text, href, title, download, target, icon }) {
+export default function Button({ text, href, title, download, target, icon, className }) {
   const relAttributes = target === "_blank" ? "noopener noreferrer" : undefined
 
   return (
-    <div>
+    <div className={className}>
       <a
         className={styles.button}
         rel={relAttributes}
