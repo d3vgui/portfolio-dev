@@ -9,134 +9,137 @@ $color-bg: #212529;
 // }
 
 .aboutSection {
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  margin: 0 20px;
-  border-radius: 30px;
-  background-color: $color-bg;
-  background-image: url(../../../app/images/topographic-1.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  padding: 50px;
-  // background-attachment: fixed;
+   min-height: 90vh;
+   display: flex;
+   align-items: center;
+   margin: 0 20px;
+   border-radius: 30px;
+   background-color: $color-bg;
+   background-image: url(../../../app/images/topographic-1.svg);
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   padding: 50px;
+   // background-attachment: fixed;
 
-  h2 {
-    color: $color-white;
-    font-size: 36px;
-    font-weight: bold;
-    white-space: nowrap;
-  }
-
-  span {
-    color: $color-blue;
-  }
-
-  .line {
-    height: 1px;
-    background-color: $color-blue;
-    flex-grow: 1;
-  }
-
-  .text {
-    margin: 20px 0;
-
-    p {
+   h2 {
       color: $color-white;
-      font-size: 20px;
-      line-height: 1.3;
-    }
-  }
+      font-size: 36px;
+      font-weight: bold;
+      white-space: nowrap;
+   }
 
-  button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: $color-white;
-    transition: all 0.4s ease-in-out;
-    margin: 10px 0;
+   span {
+      color: $color-blue;
+   }
 
-    &:hover {
-      transform: translateY(5px);
+   .line {
+      height: 1px;
       background-color: $color-blue;
-      color: $color-white !important;
-      box-shadow: 0 5px 15px $color-shadow-button;
-    }
-  }
+      flex-grow: 1;
+   }
 
-  @keyframes floatUpDown {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(6px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
+   .text {
+      margin: 20px 0;
 
-  i {
-    display: inline-block;
-    animation: floatUpDown 1s ease-in-out infinite;
-  }
+      p {
+         color: $color-white;
+         font-size: 18px;
+         line-height: 1.3;
+      }
+   }
 
-  img {
-    border-radius: 15px;
-    height: auto;
-    width: auto;
-    position: relative;
-    z-index: 2;
-    box-shadow: 10px 10px 0px $color-blue;
-  }
+   .contentButton {
+      button {
+         padding: 10px 15px;
+         border: none;
+         border-radius: 5px;
+         background-color: $color-white;
+         transition: all 0.4s ease-in-out;
+         margin: 10px 0;
+
+         &:hover {
+            transform: translateY(5px);
+            background-color: $color-blue;
+            color: $color-white !important;
+            box-shadow: 0 5px 15px $color-shadow-button;
+         }
+      }
+   }
+
+   @keyframes floatUpDown {
+      0% {
+         transform: translateY(0px);
+      }
+      50% {
+         transform: translateY(6px);
+      }
+      100% {
+         transform: translateY(0px);
+      }
+   }
+
+   i {
+      display: inline-block;
+      animation: floatUpDown 1s ease-in-out infinite;
+   }
+
+   img {
+      border-radius: 15px;
+      height: auto;
+      width: auto;
+      position: relative;
+      z-index: 2;
+      box-shadow: 10px 10px 0px $color-blue;
+   }
 }
-
 
 //* --- MEDIA QUERIES --- *//
- 
+
 @media (max-width: 991px) {
-
-  .imageWrapper{
-    display: flex;
-    justify-content: center;
-    width: auto;
-  }
-
-  .aboutSection img{
-    margin-top: 30px;
-    height: 400px;
-    width: auto;
-  }
-}
-
-
-@media (max-width: 577px) {
-  .aboutSection {
-    padding: 50px 10px;
-    flex-direction: column;
-
-    .title {
-      h2 {
-        font-size: 28px; 
-      }
-    }
-
-    .text {
-      p {
-        font-size: 14px;
-      }
-    }
-
-    .imageWrapper{
+   .imageWrapper {
       display: flex;
       justify-content: center;
-      margin-top: 10px;
+      width: auto;
+   }
 
-      img{
-        height: 300px;
+   .contentButton {
+      display: flex;
+      justify-content: center;
+   }
+
+   .aboutSection img {
+      margin-top: 30px;
+      height: 400px;
+      width: auto;
+   }
+}
+
+@media (max-width: 577px) {
+   .aboutSection {
+      padding: 50px 10px;
+      flex-direction: column;
+
+      .title {
+         h2 {
+            font-size: 28px;
+         }
       }
-    }
-  }
 
+      .text {
+         p {
+            font-size: 14px;
+         }
+      }
+
+      .imageWrapper {
+         display: flex;
+         justify-content: center;
+         margin-top: 10px;
+
+         img {
+            height: 300px;
+         }
+      }
+   }
 }

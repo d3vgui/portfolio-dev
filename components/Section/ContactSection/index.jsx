@@ -1,15 +1,36 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import toast, { Toaster } from "react-hot-toast"
 import styles from "./ContactSection.module.scss"
 
+const text = "Estou sempre em busca de novos desafios que unam desenvolvimento front-end e inteligência de dados. Se você tem uma vaga, um projeto em mente ou apenas quer trocar uma ideia sobre tecnologia, fique à vontade para me chamar. Minha caixa de entrada está sempre aberta!"
+
 export default function ContactSection() {
+  // Estados do formulário
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   })
+  const [displayedText, setDisplayedText] = useState("")
+
+  // Efeito de Typewriter
+  useEffect(() => {
+    let index = 0
+    const speed = 20
+
+    const typeInterval = setInterval(() => {
+      if (index <= text.length) {
+        setDisplayedText(text.slice(0, index))
+        index++
+      } else {
+        clearInterval(typeInterval)
+      }
+    }, speed)
+
+    return () => clearInterval(typeInterval)
+  }, [])
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -45,11 +66,11 @@ export default function ContactSection() {
       error: "Ops! Algo deu errado ao enviar. ❌",
     })
 
-    envioPromise.then(() => {
-      setFormData({ name: "", email: "", message: "" })
-    }).catch(() => {
-        
-    })
+    envioPromise
+      .then(() => {
+        setFormData({ name: "", email: "", message: "" })
+      })
+      .catch(() => {})
   }
 
   return (
@@ -107,7 +128,9 @@ export default function ContactSection() {
         </div>
         <div className="col-lg-1 col-md-12 col-sm-12 col-xs-12"></div>
         <div className="col-lg-5 col-md-12 col-sm-12 col-xs-12">
-          <div className={`${styles.title} d-flex align-items-center justify-content-center gap-5`}>
+          <div
+            className={`${styles.title} d-flex align-items-center justify-content-center gap-5`}
+          >
             <h2>
               <span>04. </span>CONTATO
             </h2>
@@ -115,7 +138,7 @@ export default function ContactSection() {
           </div>
           <div className={styles.text}>
             <p>
-              Estou sempre em busca de novos desafios que unam desenvolvimento front-end e inteligência de dados. Se você tem uma vaga, um projeto em mente ou apenas quer trocar uma ideia sobre tecnologia, fique à vontade para me chamar. Minha caixa de entrada está sempre aberta!
+              {displayedText}
             </p>
           </div>
         </div>

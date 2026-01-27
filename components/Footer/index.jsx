@@ -20,7 +20,7 @@ export default function Footer() {
                      />
                   </Link>
                   <div className={styles.text}>
-                     <p>"¹⁴ Todos os vossos atos sejam feitos com amor."</p>
+                     <p>"Todos os vossos atos sejam feitos com amor."</p>
                      <p>1 Coríntios 16:14</p>
                   </div>
                   <ul>

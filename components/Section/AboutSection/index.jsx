@@ -10,7 +10,6 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
 
-// Registra apenas o ScrollTrigger, não precisamos mais do TextPlugin
 gsap.registerPlugin(ScrollTrigger)
 
 export default function AboutSection() {
@@ -21,7 +20,7 @@ export default function AboutSection() {
       scrollTrigger: {
         trigger: ".text-container",
         start: "top 80%",
-        toggleActions: "play none none reverse",
+        once: true,
       },
       y: -60,
       opacity: 0,
@@ -34,7 +33,7 @@ export default function AboutSection() {
       scrollTrigger: {
         trigger: ".image-wrapper",
         start: "top 80%",
-        toggleActions: "play none none reverse",
+        once: true,
       },
       x: 200,
       opacity: 0,
@@ -70,7 +69,7 @@ export default function AboutSection() {
 
           </div>
           
-          <div>
+          <div className={styles.contentButton}>
             <Link href="#techSection">
               <button>Tecnologias <i className="bi bi-caret-down-fill"></i></button>
             </Link>

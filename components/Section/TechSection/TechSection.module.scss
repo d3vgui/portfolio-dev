@@ -3,37 +3,37 @@ $color-gray: #696969;
 $color-bg-tech: #272727;
 $color-blue: #4a92f8;
 $color-shadow-button: #4a92f866;
-$grid-color: #ffffff0d; 
+$grid-color: #ffffff0d;
 $grid-size: 50px;
 
 .gridBackground {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
+   position: absolute;
+   inset: 0;
+   z-index: 0;
+   pointer-events: none;
 
-  background-image: 
-    linear-gradient(to right, #{$grid-color} 1px, transparent 1px),
-    linear-gradient(to bottom, #{$grid-color} 1px, transparent 1px);
-  
-  background-size: $grid-size $grid-size;
+   background-image:
+      linear-gradient(to right, #{$grid-color} 1px, transparent 1px),
+      linear-gradient(to bottom, #{$grid-color} 1px, transparent 1px);
 
-  mask-image: radial-gradient(
-    ellipse at top center, 
-    black 40%, 
-    transparent 80%
-  );
-  
-  -webkit-mask-image: radial-gradient(
-    ellipse at top center, 
-    black 40%, 
-    transparent 80%
-  );
+   background-size: $grid-size $grid-size;
+
+   mask-image: radial-gradient(
+      ellipse at top center,
+      black 40%,
+      transparent 80%
+   );
+
+   -webkit-mask-image: radial-gradient(
+      ellipse at top center,
+      black 40%,
+      transparent 80%
+   );
 }
 
 .contentGrid {
-  position: relative;
-  z-index: 1; 
+   position: relative;
+   z-index: 1;
 }
 
 // .configSection{
@@ -41,111 +41,118 @@ $grid-size: 50px;
 // }
 
 .techSection {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
+   min-height: 100vh;
+   display: flex;
+   align-items: center;
 
-  h2 {
-    color: $color-white;
-    font-size: 36px;
-    font-weight: bold;
-    white-space: nowrap;
-  }
-
-  span {
-    color: $color-blue;
-  }
-
-  .line {
-    height: 1px;
-    background-color: $color-blue;
-    flex-grow: 1;
-  }
-
-  .contentTech {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    margin: 30px 0;
-    gap: 20px;
-  }
-
-  .text {
-    margin: 30px 0;
-
-    p {
+   h2 {
       color: $color-white;
-      margin-top: 10px;
-    }
-  }
+      font-size: 36px;
+      font-weight: bold;
+      white-space: nowrap;
+   }
 
-  button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: $color-white;
-    transition: all 0.4s ease-in-out;
-    margin: 10px 0;
+   span {
+      color: $color-blue;
+   }
 
-    &:hover {
-      transform: translateY(5px);
+   .line {
+      height: 1px;
       background-color: $color-blue;
-      color: $color-white !important;
-      box-shadow: 0 5px 15px $color-shadow-button;
-    }
-  }
+      flex-grow: 1;
+   }
 
-  @keyframes floatUpDown {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(6px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
+   .contentTech {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 30px 0;
+      gap: 20px;
+   }
 
-  i {
-    display: inline-block;
-    animation: floatUpDown 1s ease-in-out infinite;
-  }
+   .text {
+      margin: 30px 0;
+
+      p {
+         color: $color-white;
+         margin-top: 10px;
+      }
+   }
+
+   .contentButton {
+      button {
+         padding: 10px 15px;
+         border: none;
+         border-radius: 5px;
+         background-color: $color-white;
+         transition: all 0.4s ease-in-out;
+         margin: 10px 0;
+
+         &:hover {
+            transform: translateY(5px);
+            background-color: $color-blue;
+            color: $color-white !important;
+            box-shadow: 0 5px 15px $color-shadow-button;
+         }
+      }
+   }
+
+   @keyframes floatUpDown {
+      0% {
+         transform: translateY(0px);
+      }
+      50% {
+         transform: translateY(6px);
+      }
+      100% {
+         transform: translateY(0px);
+      }
+   }
+
+   i {
+      display: inline-block;
+      animation: floatUpDown 1s ease-in-out infinite;
+   }
 }
 
 /* --- MEDIA QUERIES --- */
 
 @media (max-width: 991px) {
-  .techSection {
-    padding: 40px 30px;
+   .techSection {
+      padding: 40px 30px;
 
-    .content {
-      flex-direction: column-reverse;
-    }
-  }
+      .content {
+         flex-direction: column-reverse;
+      }
+
+      .contentButton{
+        display: flex;
+        justify-content: center;
+      }
+   }
 }
 
 @media (max-width: 577px) {
-  .techSection {
-    padding: 50px 10px;
+   .techSection {
+      padding: 50px 10px;
 
-    .contentTech {
-      margin-top: 10px;
-      gap: 10px;
-    }
-
-    .title {
-      h2 {
-        font-size: 28px;
+      .contentTech {
+         margin-top: 10px;
+         gap: 10px;
       }
-    }
 
-    .text {
-      p {
-        font-size: 14px;
-        margin: 10px 0;
+      .title {
+         h2 {
+            font-size: 28px;
+         }
       }
-    }
-  }
+
+      .text {
+         p {
+            font-size: 14px;
+            margin: 10px 0;
+         }
+      }
+   }
 }
