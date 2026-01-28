@@ -34,7 +34,7 @@ export default function AboutSection() {
         start: "top 80%",
         once: true,
       },
-      x: 200,
+      y: 200,
       opacity: 0,
       duration: 1,
       ease: "power3.out"
