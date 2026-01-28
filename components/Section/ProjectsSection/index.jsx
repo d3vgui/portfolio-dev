@@ -47,7 +47,7 @@ export default function ProjectsSection() {
         <div className={styles.title}>
           <div className="d-flex align-items-center justify-content-center gap-5 flex-wrap">
             <h2>
-              <span>03. </span>PROJETOS FRONT-END
+              <span>03. </span>PROJETOS
             </h2>
             <div className={styles.line}></div>
           </div>

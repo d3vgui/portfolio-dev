@@ -5,7 +5,7 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import styles from "./TechSection.module.scss"
 import CardTech from "../../CardTech"
-
+import { handleSmoothScroll } from "../../../app/utils/scrollUtils"
 import javascriptIcon from "../../../app/images/js-icon.png"
 import reactIcon from "../../../app/images/react-icon.png"
 import nextIcon from "../../../app/images/nextjs-icon.png"
@@ -105,7 +105,7 @@ export default function TechSection() {
             stagger: {
                amount: 0.4,
                grid: "auto",
-               from: "edges", 
+               from: "edges",
             },
             ease: "back.out(1.2)",
          })
@@ -121,7 +121,6 @@ export default function TechSection() {
          ref={containerRef}
       >
          <div className={`${"container d-flex flex-wrap"} ${styles.content}`}>
-            
             <div
                ref={cardsContainerRef}
                className={`${"col-lg-6 col-md-12 col-12"} ${styles.contentTech}`}
@@ -235,11 +234,15 @@ export default function TechSection() {
                      decisão.
                   </p>
                   <div className={styles.contentButton}>
-                     <Link href="#projectsSection">
+                     <a
+                        href="#projectsSection"
+                        title="Clique aqui para ser direcionado a sessão de Projetos"
+                        onClick={(e) => handleSmoothScroll(e, "#projectsSection")}
+                     >
                         <button>
                            Projetos <i className="bi bi-caret-down-fill"></i>
                         </button>
-                     </Link>
+                     </a>
                   </div>
                </div>
             </div>

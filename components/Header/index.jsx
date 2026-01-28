@@ -3,7 +3,6 @@
 import { Fragment, useState, useEffect } from "react"
 import styles from "./Header.module.scss"
 import Logo from "../../app/images/lion-logo.webp"
-import Link from "next/link"
 import Image from "next/image"
 
 export default function Header() {
@@ -12,6 +11,28 @@ export default function Header() {
 
    const toggleMenu = () => {
       setMenuActive(!menuActive)
+   }
+
+   const handleScroll = (e, targetId) => {
+      e.preventDefault()
+
+      setMenuActive(false)
+
+      const element = document.querySelector(targetId)
+
+      if (element) {
+         setTimeout(() => {
+            const headerOffset = 80
+            const elementPosition = element.getBoundingClientRect().top
+            const offsetPosition =
+               elementPosition + window.pageYOffset - headerOffset
+
+            window.scrollTo({
+               top: offsetPosition,
+               behavior: "smooth",
+            })
+         }, 100)
+      }
    }
 
    useEffect(() => {
@@ -38,7 +59,11 @@ export default function Header() {
             className={`${styles.header} ${scrollActive ? styles.scrolled : ""}`}
          >
             <div className={styles.logo}>
-               <Link href="#heroSection">
+               <a
+                  href="#heroSection"
+                  onClick={(e) => handleScroll(e, "#heroSection")}
+                  title="Clique aqui para ser direcionado a sessão Início"
+               >
                   <Image
                      className="img-fluid"
                      src={Logo}
@@ -46,12 +71,13 @@ export default function Header() {
                      title="Logo"
                      priority
                   />
-               </Link>
+               </a>
             </div>
 
             <div
                className={`${styles.overlay} ${menuActive ? styles.active : ""}`}
                onClick={toggleMenu}
+               aria-hidden={!menuActive}
             />
 
             <div
@@ -60,29 +86,49 @@ export default function Header() {
                <nav className={styles.nav}>
                   <ul>
                      <li>
-                        <Link onClick={toggleMenu} href="#heroSection">
+                        <a
+                           href="#heroSection"
+                           onClick={(e) => handleScroll(e, "#heroSection")}
+                           title="Clique aqui para ser direcionado a sessão Início"
+                        >
                            Início
-                        </Link>
+                        </a>
                      </li>
                      <li>
-                        <Link onClick={toggleMenu} href="#aboutSection">
+                        <a
+                           href="#aboutSection"
+                           onClick={(e) => handleScroll(e, "#aboutSection")}
+                           title="Clique aqui para ser direcionado a sessão Sobre mim"
+                        >
                            Sobre
-                        </Link>
+                        </a>
                      </li>
                      <li>
-                        <Link onClick={toggleMenu} href="#techSection">
+                        <a
+                           href="#techSection"
+                           onClick={(e) => handleScroll(e, "#techSection")}
+                           title="Clique aqui para ser direcionado a sessão Tecnologias"
+                        >
                            Tecnologias
-                        </Link>
+                        </a>
                      </li>
                      <li>
-                        <Link onClick={toggleMenu} href="#projectsSection">
+                        <a
+                           href="#projectsSection"
+                           onClick={(e) => handleScroll(e, "#projectsSection")}
+                           title="Clique aqui para ser direcionado a sessão Projetos"
+                        >
                            Projetos
-                        </Link>
+                        </a>
                      </li>
                      <li>
-                        <Link onClick={toggleMenu} href="#contactSection">
+                        <a
+                           href="#contactSection"
+                           onClick={(e) => handleScroll(e, "#contactSection")}
+                           title="Clique aqui para ser direcionado a sessão Contato"
+                        >
                            Contato
-                        </Link>
+                        </a>
                      </li>
                   </ul>
                </nav>
@@ -92,6 +138,7 @@ export default function Header() {
                      target="_blank"
                      href="https://www.linkedin.com/in/gu1d3v/"
                      rel="noreferrer"
+                     title="Clique aqui para ser direcionado ao LinkedIn"
                   >
                      <i className="bi bi-linkedin"></i>
                   </a>
@@ -99,6 +146,7 @@ export default function Header() {
                      target="_blank"
                      href="https://github.com/d3vgui"
                      rel="noreferrer"
+                     title="Clique aqui para ser direcionado ao GitHub"
                   >
                      <i className="bi bi-github"></i>
                   </a>
@@ -109,6 +157,7 @@ export default function Header() {
                className={`${styles.hamburger} ${menuActive ? styles.active : ""}`}
                onClick={toggleMenu}
                aria-label="Menu"
+               type="button"
             >
                <span className={styles.line}></span>
                <span className={styles.line}></span>

@@ -3,10 +3,9 @@
 import { useRef } from "react"
 import styles from "./AboutSection.module.scss"
 import dev from "../../../app/images/eu.jpg"
-import Link from "next/link"
 import Image from 'next/image'
-
 import gsap from "gsap"
+import { handleSmoothScroll } from "../../../app/utils/scrollUtils"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
 
@@ -70,9 +69,13 @@ export default function AboutSection() {
           </div>
           
           <div className={styles.contentButton}>
-            <Link href="#techSection">
+            <a 
+              href="#techSection" 
+              title="Clique aqui para ser direcionado a sessão de Tecnologia"
+              onClick={(e) => handleSmoothScroll(e, "#projectsSection")}
+            >
               <button>Tecnologias <i className="bi bi-caret-down-fill"></i></button>
-            </Link>
+            </a>
           </div>
         </div>
         
